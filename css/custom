@@ -1,0 +1,34 @@
+/* 确保背景覆盖整个页面 */
+#web_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* 公告动画效果 */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(73, 177, 245, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(73, 177, 245, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(73, 177, 245, 0); }
+}
+
+.card-announcement {
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.card-announcement:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .card-announcement {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
